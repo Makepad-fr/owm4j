@@ -1,0 +1,11 @@
+Main.class
+io/makepad/openweathermap/api/model/Wind.class
+io/makepad/openweathermap/api/model/Clouds.class
+io/makepad/openweathermap/api/model/Sys.class
+io/makepad/openweathermap/api/model/MainInfo.class
+io/makepad/openweathermap/api/model/Rain.class
+io/makepad/openweathermap/api/OpenWeatherMap.class
+io/makepad/openweathermap/api/model/Coordinate.class
+io/makepad/openweathermap/api/OpenWeatherMapResponse.class
+io/makepad/openweathermap/api/model/Weather.class
+io/makepad/openweathermap/api/model/Snow.class
