@@ -8,7 +8,9 @@ public enum EndPoint {
     CLIMATIC_FORECAST_30_DAYS(true, 2.5, "forecast/climate"),
     CURRENT_SOLAR_RADIATION(false, 2.5, "solar_radiation"),
     FIVE_DAY_WEATHER_FORECAST(false, 2.5, "forecast"),
-    ROAD_RISK(false, 2.5, "roadrisk");
+    ROAD_RISK(false, 2.5, "roadrisk"),
+    SOLAR_RADIATION_FORECAST(false, 2.5, "solar_radiation/forecast"),
+    HISTORICAL_SOLAR_RADIATION(false, 2.5, "solar_radiation/history");
 
     private final boolean isPro;
     private final double version;

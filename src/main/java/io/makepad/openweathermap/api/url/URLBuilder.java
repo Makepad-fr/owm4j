@@ -73,7 +73,7 @@ public class URLBuilder {
             verifyNonNull(this.dt, "dt is required");
         }
 
-        
+
     }
 
     private String getQuery(String key, String value) {
@@ -98,6 +98,49 @@ public class URLBuilder {
                     queryParams.add(getQuery("lang", this.lang.toString()));
                 }
             }
+            case HOURLY_FORECAST -> {
+                if (this.cnt != null) {
+                    queryParams.add(getQuery("cnt", this.cnt.toString()));
+                }
+                if (this.lang != null) {
+                    queryParams.add(getQuery("lang", this.lang.toString()));
+                }
+            }
+            case ONE_CALL -> {
+                if (!this.excludeList.isEmpty()) {
+                    queryParams.add(getQuery("exclude", this.excludeList.toString()));
+                }
+                if (this.unit != null) {
+                    queryParams.add(getQuery("units", this.unit.toString()));
+                }
+                if (this.lang != null) {
+                    queryParams.add(getQuery("lang", this.lang.toString()));
+                }
+            }
+            case DAILY_FORECAST_16_DAYS, CLIMATIC_FORECAST_30_DAYS -> {
+                if (this.cnt != null) {
+                    queryParams.add(getQuery("cnt", this.cnt.toString()));
+                }
+                if (this.unit != null) {
+                    queryParams.add(getQuery("units", this.unit.toString()));
+                }
+                if (this.lang != null) {
+                    queryParams.add(getQuery("lang", this.lang.toString()));
+                }
+            }
+            case FIVE_DAY_WEATHER_FORECAST -> {
+                if (this.unit != null) {
+                    queryParams.add(getQuery("units", this.unit.toString()));
+                }
+                if (this.cnt != null) {
+                    queryParams.add(getQuery("cnt", this.cnt.toString()));
+                }
+                if (this.lang != null) {
+                    queryParams.add(getQuery("lang", this.lang.toString()));
+                }
+            }
+
+
         }
         String q = queryParams.stream().collect(Collectors.joining("&"));
         return new URL("%s?%s".formatted(base, q));
